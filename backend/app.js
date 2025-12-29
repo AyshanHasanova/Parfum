@@ -123,9 +123,10 @@ dotenv.config({ path: "config/config.env" })
 const app = express()
 
 // 2. CORS tənzimləməsi (Routes-dan əvvəl yazılmalıdır!)
+// server.js və ya app.js
 app.use(cors({
-    origin: "http://localhost:5173", // Sənin Frontend ünvanın
-    credentials: true // Cookie və Tokenlərin keçməsi üçün vacibdir
+  origin: ["http://localhost:5173", "https://flameteam.netlify.app"], // Həm lokal, həm də canlı sayt
+  credentials: true
 }));
 
 // Məlumat bazasına qoşuluruq
